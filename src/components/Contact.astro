@@ -1,0 +1,279 @@
+---
+// Contact.astro
+---
+
+<section class="contact" id="contact">
+  <div class="contact__skew"></div>
+  <div class="contact__inner">
+    <div class="contact__info">
+      <h2 class="contact__heading">Start a Transformation</h2>
+      <p class="contact__subtext">
+        Looking to improve operational efficiency, production visibility, or execution control? Share your requirements with us. 
+        Our team will connect to understand your systems and identify the right approach.
+      </p>
+
+      <div class="contact__details">Operations
+        <div class="contact__detail-item">
+          <div class="contact__detail-icon">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <div>
+            <div class="contact__detail-label">Location</div>
+            <div class="contact__detail-value">Trichy, Tamil Nadu</div>
+          </div>
+        </div>
+
+        <div class="contact__detail-item">
+          <div class="contact__detail-icon">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <div>
+            <div class="contact__detail-label">Contact</div>
+            <div class="contact__detail-value">infovacgs@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact__form-wrap">
+      <form class="contact__form" id="contactForm">
+        <div class="form-field">
+          <label class="form-label" for="name">Full Name</label>
+          <input
+            class="form-input"
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Johnathan D. Sterling"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="email">Corporate Email</label>
+          <input
+            class="form-input"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="j.sterling@enterprise.com"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="inquiry">Nature of Inquiry</label>
+          <select class="form-input" id="inquiry" name="inquiry">
+            <option>Production Planning & Control Systems</option>
+            <option>MES / ERP Implementation</option>
+            <option>Supply Chain Optimization</option>
+            <option>Operational Analytics & Reporting</option>
+            <option>Custom Digital Solutions</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="message">Brief Context</label>
+          <textarea
+            class="form-input"
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="How can we assist your organization?"
+          ></textarea>
+        </div>
+
+        <button class="form-submit" type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 8rem 0;
+    background: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact__skew {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 100%;
+    background: var(--color-surface-container-low);
+    transform: skewX(-6deg) translateX(5rem);
+    display: none;
+  }
+
+  .contact__inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .contact__heading {
+    font-family: var(--font-headline);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+  }
+
+  .contact__subtext {
+    font-size: 1.125rem;
+    color: var(--color-on-surface-variant);
+    max-width: 28rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact__detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact__detail-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-primary-fixed);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact__detail-icon .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+  }
+
+  .contact__detail-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact__detail-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-on-surface);
+  }
+
+  /* Form */
+  .contact__form-wrap {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 40px 80px rgba(25, 28, 29, 0.08);
+    border: 1px solid rgba(194, 198, 211, 0.1);
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .form-input {
+    width: 100%;
+    background: var(--color-surface-container-lowest);
+    border: 1px solid rgba(194, 198, 211, 0.3);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-on-surface);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    resize: vertical;
+  }
+
+  .form-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(213, 227, 255, 0.4);
+  }
+
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+
+  .form-submit {
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 1.25rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-headline);
+    font-size: 1.125rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(4, 53, 104, 0.12);
+    transition: box-shadow 0.25s, transform 0.2s;
+  }
+
+  .form-submit:hover {
+    box-shadow: 0 12px 32px rgba(4, 53, 104, 0.2);
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 1024px) {
+    .contact__skew {
+      display: block;
+    }
+
+    .contact__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit') as HTMLButtonElement;
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#16a34a';
+    setTimeout(() => {
+      btn.textContent = 'Send Inquiry';
+      btn.style.background = '';
+      form.reset();
+    }, 3000);
+  });
+</script>

@@ -1,0 +1,281 @@
+---
+// Services.astro
+---
+
+<section class="services" id="services">
+  <div class="services__inner">
+    <div class="services__header">
+      <div class="section-label">Core Capabilities</div>
+      <h2 class="services__heading">System-Driven Operations</h2>
+    </div>
+
+    <div class="bento">
+      <!-- Card 1 – Large -->
+      <div class="bento__card bento__card--large">
+        
+        
+        <div class="bento__card-content">
+          <h3 class="bento__title bento__title--light">Production Planning & Control</h3>
+          <p class="bento__desc bento__desc--light">
+            End-to-end planning and execution systems that bring structure, visibility, and control across shop floor operations.
+          </p>
+          <a class="bento__link bento__link--light" href="#contact">
+            Explore Service
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 – Global Expansion -->
+      <div class="bento__card bento__card--hover-primary">
+        
+        <h3 class="bento__title bento__title--dark">MES & ERP Solutions</h3>
+        <p class="bento__desc bento__desc--dark">
+         Implementation of integrated MES and ERP systems to streamline workflows, data flow, and execution control.
+
+        </p>
+        
+      </div>
+
+      <!-- Card 3 – Operational Analytics -->
+      <div class="bento__card bento__card--fixed">
+        
+        <h3 class="bento__title bento__title--dark">Operational Analytics</h3>
+        <p class="bento__desc bento__desc--muted">
+          Real-time analytics and reporting systems that enable data-driven decision-making and continuous performance tracking.
+        </p>
+        
+      </div>
+
+      <!-- Card 4 – Filler -->
+      <div class="bento__card bento__card--filler">
+        <p class="bento__wordmark">Excellence Defined</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 8rem 0;
+    background: var(--color-surface);
+  }
+
+  .services__inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .services__header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .services__heading {
+    font-family: var(--font-headline);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.04em;
+  }
+
+  /* Bento Grid */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bento__card {
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Large card */
+  .bento__card--large {
+    background: var(--color-primary);
+    min-height: 300px;
+    justify-content: flex-start;
+  }
+  .bento__card--large .bento__card-content {
+  margin-top: 1rem;
+}
+
+  .bento__card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: transform 0.7s ease;
+  }
+
+  .bento__card--large:hover .bento__card-bg {
+    transform: scale(1.05);
+  }
+
+  .bento__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--color-primary) 40%, rgba(4,53,104,0.2) 100%);
+  }
+
+  .bento__card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Hover-primary card */
+  .bento__card--hover-primary {
+    background: var(--color-surface-container-high);
+    transition: background 0.5s;
+    justify-content: space-between;
+  }
+
+  .bento__card--hover-primary:hover {
+    background: var(--color-primary);
+  }
+
+  .bento__card--hover-primary:hover .bento__title--dark {
+    color: white;
+  }
+
+  .bento__card--hover-primary:hover .bento__desc--dark {
+    color: rgba(219, 234, 254, 0.85);
+  }
+
+  .bento__card--hover-primary:hover .bento__filler-icon {
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* Fixed card */
+  .bento__card--fixed {
+    background: var(--color-primary-fixed);
+    border: 1px solid rgba(4, 53, 104, 0.05);
+    justify-content: space-between;
+    transition: box-shadow 0.3s;
+  }
+
+  .bento__card--fixed:hover {
+    box-shadow: 0 20px 40px rgba(4,53,104,0.08);
+  }
+
+  /* Filler card */
+  .bento__card--filler {
+    background: var(--color-surface-container-low);
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+  }
+
+  .bento__wordmark {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0.4;
+  }
+
+  /* Icon wrap */
+  .bento__icon-wrap {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: white;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+  }
+
+  .bento__icon {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+  }
+
+  .bento__filler-icon {
+    font-size: 3.5rem;
+    color: rgba(4, 53, 104, 0.15);
+    align-self: flex-end;
+    transition: color 0.5s;
+  }
+
+  /* Titles & descs */
+  .bento__title {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    transition: color 0.5s;
+  }
+
+  .bento__title--light { color: white; }
+  .bento__title--dark  { color: var(--color-primary); }
+
+  .bento__desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    transition: color 0.5s;
+  }
+
+  .bento__desc--light { color: rgba(219, 234, 254, 0.85); }
+  .bento__desc--dark  { color: var(--color-on-surface-variant); }
+  .bento__desc--muted { color: var(--color-on-primary-fixed-variant); }
+
+  .bento__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-family: var(--font-headline);
+    transition: gap 0.2s;
+  }
+
+  .bento__link:hover { gap: 0.75rem; }
+  .bento__link--light { color: white; }
+
+  .bento__method-link {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.25rem;
+    width: fit-content;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 768px) {
+    .bento {
+      grid-template-columns: repeat(12, 1fr);
+      height: auto;
+    }
+
+    .bento__card--large      { grid-column: span 8; min-height: 360px; }
+    .bento__card--hover-primary { grid-column: span 4; }
+    .bento__card--fixed      { grid-column: span 4; }
+    .bento__card--filler     { grid-column: span 8; }
+  }
+</style>

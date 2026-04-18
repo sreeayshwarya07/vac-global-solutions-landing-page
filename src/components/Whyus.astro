@@ -1,0 +1,136 @@
+---
+// WhyUs.astro
+---
+
+<section class="whyus" id="why-us">
+  <div class="whyus__inner">
+    <div class="whyus__left">
+      <h2 class="whyus__heading">Why VAC Global Solutions?</h2>
+      <p class="whyus__subtext">
+        We don’t rely on assumptions. We build structured systems that bring clarity, control, and measurable execution across operations.
+      </p>
+    </div>
+
+    <div class="whyus__cards">
+      <div class="why-card">
+        <span class="material-symbols-outlined why-card__icon">verified</span>
+        <h4 class="why-card__title">Structured Execution</h4>
+        <p class="why-card__text">
+          Every process is mapped, defined, and controlled using PPCX-based execution frameworks.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <span class="material-symbols-outlined why-card__icon">hub</span>
+        <h4 class="why-card__title">Integrated Systems</h4>
+        <p class="why-card__text">
+          Seamless integration of production, data, and workflows through MES and ERP ecosystems.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <span class="material-symbols-outlined why-card__icon">trending_up</span>
+        <h4 class="why-card__title">Data-Driven Decisions</h4>
+        <p class="why-card__text">
+          Real-time insights and analytics that drive performance, efficiency, and continuous improvement.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .whyus {
+    padding: 8rem 0;
+    background: var(--color-surface-container-low);
+  }
+
+  .whyus__inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .whyus__left {
+    max-width: 28rem;
+    text-align: center;
+  }
+
+  .whyus__heading {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .whyus__subtext {
+    color: var(--color-on-surface-variant);
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .whyus__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .why-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 40px rgba(25, 28, 29, 0.02);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px rgba(25, 28, 29, 0.06);
+  }
+
+  .why-card__icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .why-card__title {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-on-surface);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .why-card__text {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  @media (min-width: 768px) {
+    .whyus__inner {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .whyus__left {
+      text-align: left;
+      flex: 0 0 33%;
+    }
+
+    .whyus__cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

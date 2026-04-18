@@ -1,0 +1,177 @@
+---
+// Navbar.astro
+---
+
+<nav class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__logo">VAC Global Solutions</div>
+
+    <ul class="navbar__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Capabilities</a></li>
+      <li><a href="#why-us">Solutions</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+
+    <a href="#contact" class="navbar__cta">Contact Us</a>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="navbar__mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Capabilities</a>
+    <a href="#why-us">Case Studies</a>
+    <a href="#contact">Solutions</a>
+    <a href="#contact" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 20px 40px rgba(25, 28, 29, 0.04);
+  }
+
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+
+  .navbar__logo {
+    font-family: var(--font-headline);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--color-primary);
+  }
+
+  .navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-family: var(--font-headline);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .navbar__links a {
+    color: #475569;
+    transition: color 0.2s;
+  }
+
+  .navbar__links a:hover {
+    color: var(--color-primary);
+  }
+
+  .navbar__cta {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+
+  .navbar__cta:hover {
+    opacity: 0.9;
+  }
+
+  .navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .navbar__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .navbar__mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.97);
+  }
+
+  .navbar__mobile-menu a {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    color: #475569;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-outline-variant);
+    transition: color 0.2s;
+  }
+
+  .navbar__mobile-menu a:hover {
+    color: var(--color-primary);
+  }
+
+  .navbar__mobile-menu .mobile-cta {
+    margin-top: 1rem;
+    background: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border-bottom: none;
+  }
+
+  .navbar__mobile-menu.open {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .navbar__links,
+    .navbar__cta {
+      display: none;
+    }
+
+    .navbar__hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('open');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>

@@ -1,0 +1,155 @@
+---
+// Hero.astro
+---
+
+<header class="hero" id="home">
+  <div class="hero__bg">
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBshJpYF2wetHetB5LDP9kL76_IYGeFklHGPTfLZ3dm3-Jau-NhZUxGmv4SRnBEHojlqIYxWpPw9ywR4BJElhZQFCjrz-mjqQSHPW7I3wN0lscp2MuM6QMqzu6f0Hq-SpA0NiWgQgY4UiZ5tQUYwI7RoAWcO6NFDBi28kpgSLR9gVeqWvMxenodddJxeb1OGYifG06P8spJC1HxQ7Yos1t-9NUBnq7go_hE9qL5xW-R1SWTYQgKvAgtlXL8IQ93r4KUVuIbf8J9udz9"
+      alt="Modern high-rise glass building"
+    />
+    <div class="hero__bg-overlay"></div>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__badge">Operations & Technology</span>
+      <h1 class="hero__heading">
+        System-Driven Operations.<br />Built to Scale.
+      </h1>
+      <p class="hero__subheading">
+        We design and implement integrated operating systems that bring visibility, control, and scalability across production, supply chain, and business operations.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Start Transformation</a>
+        <a href="#services" class="btn btn--secondary">View Capabilities</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+
+  .hero__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(4, 53, 104, 0.1), transparent);
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero__badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary-fixed);
+    color: var(--color-on-primary-fixed-variant);
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__heading {
+    font-family: var(--font-headline);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .hero__subheading {
+    max-width: 36rem;
+    font-size: 1.125rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    border: none;
+    display: inline-block;
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .btn--primary:hover {
+    transform: scale(1.02);
+  }
+
+  .btn--secondary {
+    background: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-surface-container-highest);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (min-width: 1024px) {
+    .hero__inner {
+      grid-template-columns: 1fr; /* fully single column now */
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+// About.astro
+---
+
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__left">
+      <div class="section-label">The Vision</div>
+      <h2 class="about__heading">Engineering Structured, System-Driven Enterprises</h2>
+      <div class="about__divider"></div>
+
+      <p class="about__text">
+        VaC Global Solutions is an operations and technology transformation firm focused on building structured, system-driven enterprises.
+        We design and implement integrated operating systems that bring visibility, control, and scalability across production, supply chain, and core business functions.
+      </p>
+
+      <p class="about__text">
+        By combining process design, technology, and data, we enable organizations to move from dependency on individuals to reliable, performance-driven systems. 
+        Our approach ensures consistent execution, improved operational efficiency, and the ability to scale with clarity and control.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 8rem 0;
+    background: var(--color-surface-container-low);
+  }
+
+  .about__inner {
+    max-width: 72rem; /* slightly tighter for better readability */
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .about__left {
+    max-width: 60rem; /* keeps text from stretching too wide */
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about__heading {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .about__divider {
+    width: 5rem;
+    height: 6px;
+    background: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+
+  .about__text {
+    font-size: 1.125rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+</style>
