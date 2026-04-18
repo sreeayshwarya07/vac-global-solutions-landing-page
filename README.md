@@ -27,4 +27,4 @@ npm install
 npm run dev
 
 ## Live Demo
-https://charming-lokum-6036e0.netlify.app/
+https://vacglobalsolutions.netlify.app/
